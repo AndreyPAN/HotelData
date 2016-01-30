@@ -1,0 +1,45 @@
+C:\Program Files\MySQL\MySQL Server 5.7\bin <Enter>
+
+....\bin mysql -u root-p  <Enter>
+{enter password} <Enter>
+show databases; <Enter> //show list of data bases//
+
+use DataName; //use database DataName//
+
+create database Name; <Enter> //ceate database Name//
+
+show tables; //show tables from current database //
+
+create table Tabname
+(field1 int primary key auto_increment, field2 TYPE//int, varchar(255), text e.c.//,..., fieldi TYPE,
+FOREIGN KEY (fieldname_currenttable) REFERENCES TableName2 (refer_fieldname)
+) defaultcharset=utf8; //create table Tabname in current database with fields from (...) in codding utf8, in last line from (...) we create foreign key//
+
+explain Tabname; //show us exist table Tabname//
+
+show create table Tabname; // show us text command fo creating table Tabname//
+
+drop table Tabname; //delete table Tabname//
+
+ALTER TABLE Tabname
+ADD FOREIGN KEY (fieldname_currenttable) REFERENCES TableName2 (refer_fieldname); //add new foreign key in exist table Tabname with refer_fieldname from Tabname2
+
+select * from Tabname; // show content Tabname//
+
+INSERT INTO Client (client, e_mail, phone, address, info)
+VALUES ('Andrey Panarin', 'andrey.panarin@gmail.com', '+380 4545546', 'address', 'testtest');// isert data into the tables, first () names of columns, second () values//
+
+select * from TabName where tabField like '%p%' 
+or tabField2 like 'n';
+
+
+//подключение MySQL base к VisualStudio//
+referemce add MySQL Data & Entity MySQL
+
+class MySQL
+	{
+		string host;
+		string user;
+		string pass;
+		string dbase;
+	}
