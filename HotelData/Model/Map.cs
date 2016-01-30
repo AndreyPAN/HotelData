@@ -42,8 +42,16 @@ namespace HotelData.Model
 		{
 
 			this.sql = sql;
+			id_room = -1;
+			id_book = -1;
+			day_calendar = DateTime.MinValue;
 		}
-
+/// <summary>
+/// Получение карты загрузки отеля по параметрам №комнаты, даты, № бронировки
+/// </summary>
+/// <param name="id_room"></param>
+/// <param name="id_book"></param>
+/// <param name="day_calendar"></param>
 		public void SelectMap(long id_room, long id_book, DateTime day_calendar) // Я добавил возвр значение, и изменил для теста было void
 		{
 			this.id_room = id_room;
@@ -55,7 +63,7 @@ namespace HotelData.Model
 			" from Map where " +
 			"id_room='" + sql.addslashes(id_room.ToString()) + "' " +
 			"AND id_book='" + sql.addslashes(id_book.ToString()) + "' " +
-			"AND day_calendar='" + sql.DateToString(this.day_calendar) +  "';" 
+			"AND day_calendar='" + sql.DateToString(this.day_calendar) + "';"
 
 		);
 
@@ -76,7 +84,10 @@ namespace HotelData.Model
 			//return mapRow;
 		}
 
-		private void InsertMapNone ()
+		/// <summary>
+		/// Метод, инициирующий значения при отсутствии данных по запросу для метода SelectMap (служебный)
+		/// </summary>
+		private void InsertMapNone()
 		{
 			this.status = "NONE";
 			this.adults = 0;
@@ -85,6 +96,9 @@ namespace HotelData.Model
 
 		}
 
+		/// <summary>
+		/// Добавление записи в карту  отеля
+		/// </summary>
 		public void InsertMap()
 		{
 
@@ -99,5 +113,66 @@ namespace HotelData.Model
 			);
 			while (this.sql.SqlError());
 		}
+
+
+		/// <summary>
+		/// Получение карты отеля в промежутке между заданными датами
+		/// </summary>
+		/// <param name="from_day"></param>
+		/// <param name="till_day"></param>
+		/// <returns></returns>
+		public DataTable SelectMap(DateTime from_day, DateTime till_day)
+		{
+			DataTable map;
+			do map = sql.Select(
+			@"select id_room, id_book, day_calendar, status, adults, children
+			from Map
+			where day_calendar BETWEEN '"+
+			sql.DateToString(from_day) + "' AND '"+
+			sql.DateToString(till_day) + "';"
+			);
+			 while (this.sql.SqlError()) ;
+
+			return map;
+		}
+
+		/// <summary>
+		/// Удаление записи из карты отеля
+		/// </summary>
+		public void DeleteMap ()
+		{
+			if (id_room < 0) return;
+			if (id_book < 0) return;
+			if (day_calendar == DateTime.MinValue) return;
+			do sql.Update(
+			"DELETE" +
+				" from Map where " +
+				"id_room='" + sql.addslashes(id_room.ToString()) + "' " +
+				"AND id_book='" + sql.addslashes(id_book.ToString()) + "' " +
+				"AND day_calendar='" + sql.DateToString(this.day_calendar) + "'"+
+				" LIMIT 1;"
+			);
+			while (sql.SqlError());
+		}
+
+
+		/// <summary>
+		/// Изменение записи в карте отеля
+		/// </summary>
+		public void UpdateMap ()
+		{
+			do sql.Update(
+				"UPDATE MAP" +
+					" SET status=" + sql.addslashes(status) +
+					" adults=" + adults + ","+
+					" children=" + children+ ","+
+					" WHERE id_room='" + sql.addslashes(id_room.ToString()) + "' " +
+					"AND id_book='" + sql.addslashes(id_book.ToString()) + "' " +
+					"AND day_calendar='" + sql.DateToString(this.day_calendar) + "'" +
+					" LIMIT 1;"
+				);
+			while (sql.SqlError());
+		}
+
 	}
 }
