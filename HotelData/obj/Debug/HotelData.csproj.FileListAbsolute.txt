@@ -1,0 +1,11 @@
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\bin\Debug\HotelData.exe.config
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\bin\Debug\HotelData.exe
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\bin\Debug\HotelData.pdb
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\bin\Debug\MySql.Data.dll
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\bin\Debug\MySql.Data.Entity.dll
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\obj\Debug\HotelData.csprojResolveAssemblyReference.cache
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\obj\Debug\HotelData.Form1.resources
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\obj\Debug\HotelData.Properties.Resources.resources
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\obj\Debug\HotelData.csproj.GenerateResource.Cache
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\obj\Debug\HotelData.exe
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\HotelData\obj\Debug\HotelData.pdb

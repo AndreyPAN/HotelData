@@ -1,0 +1,8 @@
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\TestHotelData\bin\Debug\TestHotelData.dll
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\TestHotelData\bin\Debug\TestHotelData.pdb
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\TestHotelData\bin\Debug\HotelData.exe
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\TestHotelData\bin\Debug\MySql.Data.dll
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\TestHotelData\bin\Debug\HotelData.pdb
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\TestHotelData\obj\Debug\TestHotelData.csprojResolveAssemblyReference.cache
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\TestHotelData\obj\Debug\TestHotelData.dll
+D:\pan\it\C#\VideoC#\Hotel\Hotel\HotelData\TestHotelData\obj\Debug\TestHotelData.pdb
